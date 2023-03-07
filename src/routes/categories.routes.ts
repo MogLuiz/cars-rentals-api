@@ -1,22 +1,23 @@
 import { Router } from "express";
-import { randomUUID } from "node:crypto";
+import { Category } from "../model/Category";
 
 const categoriesRoutes = Router();
 
-const categories = [];
+const categories: Category[] = [];
 
 categoriesRoutes.post("/", (request, response) => {
   const { name, description } = request.body;
 
-  const category = {
-    id: randomUUID(),
+  const category = new Category();
+  Object.assign(category, {
     name,
     description,
-  };
+    created_at: new Date(),
+  });
 
-  categories.push(category);
+  categories.push(...categories, category);
 
-  return response.status(201).send();
+  return response.status(201).json({ category });
 });
 
 export { categoriesRoutes };
