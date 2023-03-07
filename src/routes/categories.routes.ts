@@ -12,4 +12,8 @@ categoriesRoutes.post("/", (request, response) => {
   return response.status(201).send();
 });
 
+categoriesRoutes.get("/" ,(request, response) => {
+  return response.status(201).json(categoriesRepository.list())
+})
+
 export { categoriesRoutes };
