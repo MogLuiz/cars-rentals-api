@@ -10,7 +10,6 @@ export class SpecificationsRepository implements ISpecificationsRepository {
   constructor() {
     this.specifications = [];
   }
-  
 
   create({ name, description }: ICreateSpecificationDTO): void {
     const specification = new Specification();
@@ -25,6 +24,12 @@ export class SpecificationsRepository implements ISpecificationsRepository {
   }
 
   findByName(name: string): Specification {
-    return this.specifications.find((specification) => specification.name === name)
+    return this.specifications.find(
+      (specification) => specification.name === name
+    );
+  }
+
+  list(): Specification[] {
+    return this.specifications;
   }
 }
