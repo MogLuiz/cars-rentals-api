@@ -1,4 +1,4 @@
-import { ListCategoriesUseCase } from "./listCategoriesUseCase";
+import { ListCategoriesUseCase } from "./ListCategoriesUseCase";
 import { Request, Response } from "express";
 
 export class ListCategoriesController {
