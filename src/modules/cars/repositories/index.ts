@@ -1,5 +1,5 @@
 export * from './CategoriesRepository'
-export * from './ICategoriesRepository'
+export * from './implementations/ICategoriesRepository'
 
 export * from './SpecificationsRepository'
-export * from './ISpecificationsRepository'
+export * from './implementations/ISpecificationsRepository'
