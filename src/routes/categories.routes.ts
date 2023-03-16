@@ -14,6 +14,7 @@ const upload = multer({
 });
 
 categoriesRoutes.get("/", (request, response) => {
+  console.log('reloaaad d-c')
   return listCategoriesController.handle(request, response);
 });
 
